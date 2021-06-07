@@ -1,7 +1,70 @@
 .cart {
-    color: white;
-    
+    background-color: black;
+    height: 90vh;
 }
-.cart ul li {
-    list-style: none;
+.cartGrid    {
+    color: white;
+    margin: auto;
+    margin-top: 20px;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    column-gap: 15px;
+    row-gap: 15px;
+    text-align: center;
+}   
+.cartItem {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 100px auto;
+    justify-items: center;
+    align-items: stretch;
+    color: white;
+    font-size: auto;
+}
+.cartItem p {
+    font-size: 18px;
+}
+.priceDetail {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.shopImages {
+    max-height: 300px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+}
+.cartFooter {
+    position: fixed;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 3px solid white;
+}
+.cartFooter p {
+    font-size: 50px;  
+}
+.completeOrderBtn {
+    background-color: white;
+    border: none;
+    border-radius: 2px;
+    color: black;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Baloo Tammudu 2', cursive;
+    width: 250px;
+    height: 50px;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: center;
 }

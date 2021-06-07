@@ -47,7 +47,7 @@ function App() {
                         <Shop shopItems={dummyItems} />
                     </Route>
                     <Route path="/cart" exact>
-                        <Cart cart={cartItems} shopItems={dummyItems} />
+                        <Cart cart={cartItems} />
                     </Route>
                     <Route path="/shop/:id">
                         <ItemDetail addToCart={addToCart} />

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 
 function CartItem({ item }) {
     return (
-        <div>
+        <div className="cartItem">
+            <img src={item.image} alt="" className="shopImages" />
             <p>{item.title}</p>
-            <p>{item.price}</p>
-            <p>${item.quantity}</p>
-            
+            <div className="priceDetail">
+                <span>${item.price * item.quantity}</span>
+                <span>{item.quantity}</span>
+            </div>
         </div>
     );
 }
