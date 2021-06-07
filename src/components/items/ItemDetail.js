@@ -12,15 +12,18 @@ function ItemDetail({ addToCart }) {
 
     const fetchItem = async () => {
         const fetchItem = await fetch(`https://fakestoreapi.com/products/${match.params.id}`);
-        const item = await fetchItem.json();
-        setItem(item);
+        const itemData = await fetchItem.json();
+        setItem(itemData);
+    }
+    const handleAdd = () => {
+        addToCart(item)
     }
 
     return (
         <div>
             <h1>{item.title}</h1>
             <h2>{item.price}</h2>
-            <button onClick={() => addToCart(item)} className={item.id}>Add to cart</button>
+            <button onClick={handleAdd} className={item.id}>Add to cart</button>
         </div>
     );
 }

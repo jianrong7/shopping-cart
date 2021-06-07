@@ -8,7 +8,18 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
+    useEffect(() => {
+        fetchItems();
+    }, []);
+
+    const [dummyItems, setDummyItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);
+
+    const fetchItems = async () => {
+        let fetchItems = await fetch('https://fakestoreapi.com/products');
+        let items = await fetchItems.json()
+        setDummyItems(items);
+    };
 
     const addToCart = (item) => {
         setCartItems(cartItems.concat([item]))
@@ -20,9 +31,11 @@ function App() {
                 <Nav />
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/shop" exact component={Shop} />
+                    <Route path="/shop" exact>
+                        <Shop shopItems={dummyItems} />
+                    </Route>
                     <Route path="/cart" exact>
-                        <Cart cart={cartItems} />
+                        <Cart cart={cartItems} shopItems={dummyItems} />
                     </Route>
                     <Route path="/shop/:id">
                         <ItemDetail addToCart={addToCart} />

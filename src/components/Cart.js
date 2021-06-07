@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
+import CartItem from "./CartItem";
 
-function Cart({ cart }) {
+function Cart({ cart, shopItems }) {
     useEffect(() => {
-        console.log(cart)
+        checkQuantity();
     }, [])
+
+    const [quantity, setQuantity] = useState({});
+
+    const checkQuantity = () => {
+        var result = cart.reduce( (acc, o) => (acc[o.id] = (acc[o.id] || 0)+1, acc), {} );
+        setQuantity(result);
+    }
 
     return (
         <div>
@@ -11,7 +19,7 @@ function Cart({ cart }) {
                 {cart.map(item => {
                     return (
                         <li>
-                            {item.title}
+                            <CartItem item={item} quantity={quantity[item.id]} />
                         </li>
                     );
                 })}

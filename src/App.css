@@ -1,11 +1,12 @@
 .App {
+    width: 100vw;
+    height: 100vh;
 }
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background-color: lightblue;
 }
 .nav-links {
     width: 20%;
@@ -13,4 +14,15 @@ nav {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+}
+.background {
+    
+    /* margin: auto;
+    margin-top: -10vh; */
+    /* max-width: 5184px;
+    max-height: 3456px; */
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
 }

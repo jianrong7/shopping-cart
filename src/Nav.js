@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import logo from "./assets/logo.jpg";
 
 export default function Nav() {
-
+    const style = {
+        height: "30px",
+        width: "30px"
+    };
     return (
         <nav>
             <Link to="/">
-                <h3>Logo</h3>
+                <img src={logo} alt="" style={style} />
             </Link>
             <ul className="nav-links">
                 <Link to="/">
