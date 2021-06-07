@@ -4,6 +4,7 @@ import "./Cart.css";
 
 function Cart({ cart, shopItems }) {
     useEffect(() => {
+        console.log(cart)
         checkQuantity();
     }, [])
 
@@ -16,9 +17,9 @@ function Cart({ cart, shopItems }) {
 
     return (
         <div className="cart">
-            {Object.keys(quantity).map(key => {
-                return(
-                    <CartItem itemId={key} quantity={quantity[key]} shopItems={shopItems} />
+            {cart.map(item => {
+                return (
+                    <CartItem item={item} key={item.id} />
                 );
             })}
         </div>

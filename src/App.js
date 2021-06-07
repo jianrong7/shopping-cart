@@ -22,7 +22,19 @@ function App() {
     };
 
     const addToCart = (item) => {
-        setCartItems(cartItems.concat([item]))
+        let itemTemp = item;
+        let cartItemsTemp = cartItems;
+        let index = cartItemsTemp.indexOf(itemTemp);
+
+        if (index < 0) {
+            itemTemp['quantity'] = 1;
+            setCartItems(cartItemsTemp.concat([itemTemp]));
+        } else {
+            itemTemp = cartItemsTemp[index];
+            itemTemp['quantity'] += 1;
+            cartItemsTemp.splice(index, 1);
+            setCartItems(cartItemsTemp.concat([itemTemp]));
+        }
     };
 
     return (
