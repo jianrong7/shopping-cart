@@ -1,3 +1,7 @@
-* {
+.cart {
     color: white;
+    
+}
+.cart ul li {
+    list-style: none;
 }

@@ -28,7 +28,7 @@ function ItemDetail({ addToCart }) {
                     <div className="text">
                         <h2>{item.title}</h2>
                         <h3>${item.price}</h3>
-                        <button onClick={handleAdd} className={item.id}>Add to cart</button>
+                        <button onClick={handleAdd} className={`addToCartBtn ${item.id}`}>ADD TO CART</button>
                         <p>{item.description}</p>
                     </div>
                 </div>

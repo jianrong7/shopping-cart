@@ -36,3 +36,18 @@ h3 {
 p {
     font-size: 22px;
 }
+.addToCartBtn {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Baloo Tammudu 2', cursive;
+    padding-top: 10px;
+    line-height: 13px;
+}
+.addToCartBtn:hover {
+    cursor: pointer;
+}

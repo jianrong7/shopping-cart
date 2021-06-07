@@ -15,7 +15,7 @@ function Cart({ cart, shopItems }) {
     }
 
     return (
-        <div>
+        <div className="cart">
             <ul>
                 {cart.map(item => {
                     return (
