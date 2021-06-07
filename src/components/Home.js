@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import background from "../assets/background.jpg";
 
 function Home() {
     return (
-        <div>
+        <div className="Home">
             <img src={background} alt="" className="background" />
         </div>
     );

@@ -4,8 +4,8 @@ import logo from "./assets/logo.jpg";
 
 export default function Nav() {
     const style = {
-        height: "30px",
-        width: "30px"
+        height: "50px",
+        width: "50px"
     };
     return (
         <nav>
@@ -13,16 +13,16 @@ export default function Nav() {
                 <img src={logo} alt="" style={style} />
             </Link>
             <ul className="nav-links">
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none' }}>
                     <li>Home</li>
                 </Link>
-                <Link to="/shop">
+                <Link to="/shop" style={{ textDecoration: 'none' }}>
                     <li>Shop</li>
                 </Link>
-                <Link to={{ pathname: "https://github.com/jianrong7" }} target="_blank">
+                <Link to={{ pathname: "https://github.com/jianrong7" }} target="_blank" style={{ textDecoration: 'none' }}>
                     <li>Social</li>
                 </Link>
-                <Link to="/cart">
+                <Link to="/cart" style={{ textDecoration: 'none' }}>
                     <li>
                         hi
                     </li>

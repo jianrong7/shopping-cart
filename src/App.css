@@ -1,6 +1,8 @@
 .App {
     width: 100vw;
     height: 100vh;
+    background-color: black;
+    font-family: 'Baloo Tammudu 2', cursive;
 }
 nav {
     display: flex;
@@ -14,15 +16,19 @@ nav {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    font-size: 20px;
+}
+li {
+    color: white;
+}
+li:hover {
+    border-bottom: 2px solid white;
 }
 .background {
-    
-    /* margin: auto;
-    margin-top: -10vh; */
-    /* max-width: 5184px;
-    max-height: 3456px; */
-    width: auto;
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 90vh;
     height: auto;
-    object-fit: cover;
-    z-index: -1;
+    width: auto;
 }
