@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function CartFooter({ cart }) {
     useEffect(() => {
         calculateTotalCost();
-    }, [])
+    })
 
     const [totalCost, setTotalCost] = useState(0);
 

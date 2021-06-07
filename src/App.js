@@ -36,6 +36,21 @@ function App() {
             setCartItems(cartItemsTemp.concat([itemTemp]));
         }
     };
+    
+    const changeQuantity = (item, sign) => {
+        let itemTemp = item;
+        let cartItemsTemp = cartItems;
+        let index = cartItemsTemp.indexOf(itemTemp);
+
+        if (sign === "+") {
+            itemTemp['quantity'] += 1;
+        } else {
+            itemTemp['quantity'] -= 1;
+        }
+        cartItemsTemp.splice(index, 1, itemTemp);
+        setCartItems(cartItemsTemp);
+        console.log(cartItems)
+    };
 
     return (
         <Router>
@@ -47,7 +62,7 @@ function App() {
                         <Shop shopItems={dummyItems} />
                     </Route>
                     <Route path="/cart" exact>
-                        <Cart cart={cartItems} />
+                        <Cart cartItems={cartItems} changeQuantity={changeQuantity} />
                     </Route>
                     <Route path="/shop/:id">
                         <ItemDetail addToCart={addToCart} />
