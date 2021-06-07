@@ -9,14 +9,13 @@ function Shop({ shopItems }) {
 
     const [items, setItems] = useState([])
 
-    const fetchItems = async () => {
+    const fetchItems = () => {
         setItems(shopItems)
     };
 
     return (
         <div className="shopItems">
             {items.map(item => {
-                console.log(item)
                 return (
                     <li key={item.id}>
                         <Link to={`/shop/${item.id}`} className="shopItem" style={{ textDecoration: 'none' }}>

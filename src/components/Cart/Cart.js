@@ -16,16 +16,11 @@ function Cart({ cart, shopItems }) {
 
     return (
         <div className="cart">
-            <ul>
-                {cart.map(item => {
-                    return (
-                        <li>
-                            <CartItem item={item} quantity={quantity[item.id]} />
-                        </li>
-                    );
-                })}
-            </ul>
-
+            {Object.keys(quantity).map(key => {
+                return(
+                    <CartItem itemId={key} quantity={quantity[key]} shopItems={shopItems} />
+                );
+            })}
         </div>
     );
 }
