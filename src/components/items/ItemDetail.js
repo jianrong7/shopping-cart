@@ -21,14 +21,16 @@ function ItemDetail({ addToCart }) {
     }
 
     return (
-        <div className="itemDetail">
-            <div className="mainContent">
-                <img src={item.image} alt="" className="shopImages" />
-                <div className="text">
-                    <h2>{item.title}</h2>
-                    <h3>${item.price}</h3>
-                    <button onClick={handleAdd} className={item.id}>Add to cart</button>
-                    <p>{item.description}</p>
+        <div className="backgroundColor">
+            <div className="itemDetail">
+                <div className="mainContent">
+                    <img src={item.image} alt="" className="itemDetailImage" />
+                    <div className="text">
+                        <h2>{item.title}</h2>
+                        <h3>${item.price}</h3>
+                        <button onClick={handleAdd} className={item.id}>Add to cart</button>
+                        <p>{item.description}</p>
+                    </div>
                 </div>
             </div>
         </div>

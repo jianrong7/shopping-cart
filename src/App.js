@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
-import Cart from "./components/Cart";
-import ItemDetail from "./components/items/ItemDetail";
+import Cart from "./components/Cart/Cart";
+import ItemDetail from "./components/Items/ItemDetail";
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
