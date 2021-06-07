@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
+import "./ItemDetail.css";
 
 function ItemDetail({ addToCart }) {
     let match = useRouteMatch("/shop/:id")
@@ -20,10 +21,16 @@ function ItemDetail({ addToCart }) {
     }
 
     return (
-        <div>
-            <h1>{item.title}</h1>
-            <h2>{item.price}</h2>
-            <button onClick={handleAdd} className={item.id}>Add to cart</button>
+        <div className="itemDetail">
+            <div className="mainContent">
+                <img src={item.image} alt="" className="shopImages" />
+                <div className="text">
+                    <h2>{item.title}</h2>
+                    <h3>${item.price}</h3>
+                    <button onClick={handleAdd} className={item.id}>Add to cart</button>
+                    <p>{item.description}</p>
+                </div>
+            </div>
         </div>
     );
 }

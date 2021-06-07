@@ -1,0 +1,30 @@
+.shopItems {
+    margin: auto;
+    margin-top: 20px;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    column-gap: 10px;
+    row-gap: 15px;
+    text-align: center;
+}
+li {
+    list-style: none;
+}
+.shopItem {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 100px auto;
+    justify-items: center;
+    align-items: start;
+    color: white;
+    font-size: auto;
+}
+.shopImages {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}

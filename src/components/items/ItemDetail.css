@@ -1,0 +1,23 @@
+.itemDetail {
+    color: white;
+    background-color: black;
+    height: 90vh;
+}
+.mainContent {
+    display: flex;
+    margin: auto;
+    width: 50%;
+}
+.shopImages {
+    max-width: 500px;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+}
+.text {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
