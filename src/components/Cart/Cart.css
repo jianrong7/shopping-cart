@@ -14,6 +14,7 @@
     column-gap: 15px;
     row-gap: 15px;
     text-align: center;
+    padding-bottom: 15vh;
 }   
 .cartItem {
     display: grid;
@@ -50,6 +51,7 @@
     justify-content: space-around;
     align-items: center;
     border-top: 3px solid white;
+    background-color: black;
 }
 .cartFooter p {
     font-size: 50px;
