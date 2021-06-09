@@ -8,12 +8,13 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
+    const [dummyItems, setDummyItems] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
+
     useEffect(() => {
         fetchItems();
     }, []);
-
-    const [dummyItems, setDummyItems] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
 
     const fetchItems = async () => {
         let fetchItems = await fetch('https://fakestoreapi.com/products');
@@ -37,20 +38,24 @@ function App() {
         }
     };
     
-    const changeQuantity = (item, sign) => {
+    const changeQuantity = (item, quantity) => {
         let itemTemp = item;
         let cartItemsTemp = cartItems;
         let index = cartItemsTemp.indexOf(itemTemp);
 
-        if (sign === "+") {
-            itemTemp['quantity'] += 1;
-        } else {
-            itemTemp['quantity'] -= 1;
-        }
-        cartItemsTemp.splice(index, 1, itemTemp);
+        itemTemp['quantity'] = quantity;
+        cartItemsTemp[index] = itemTemp;
+        
         setCartItems(cartItemsTemp);
-        console.log(cartItems)
+        calculateTotalCost(cartItemsTemp)
     };
+
+    const calculateTotalCost = (cart) => {
+        let sum = cart.reduce((accumulator, currentValue) => {
+            return accumulator + (currentValue.price * currentValue.quantity)
+        }, 0);
+        setTotalCost(sum);
+    }
 
     return (
         <Router>
@@ -62,7 +67,7 @@ function App() {
                         <Shop shopItems={dummyItems} />
                     </Route>
                     <Route path="/cart" exact>
-                        <Cart cartItems={cartItems} changeQuantity={changeQuantity} />
+                        <Cart cartItems={cartItems} changeQuantity={changeQuantity} totalCost={totalCost} />
                     </Route>
                     <Route path="/shop/:id">
                         <ItemDetail addToCart={addToCart} />

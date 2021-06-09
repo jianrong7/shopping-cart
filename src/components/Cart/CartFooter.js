@@ -1,19 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function CartFooter({ cart }) {
-    useEffect(() => {
-        calculateTotalCost();
-    })
-
-    const [totalCost, setTotalCost] = useState(0);
-
-    const calculateTotalCost = () => {
-        let sum = cart.reduce((accumulator, currentValue) => {
-            return accumulator + (currentValue.price * currentValue.quantity)
-        }, 0)
-        setTotalCost(sum);
-    }
-
+function CartFooter({ cartItems, totalCost }) {
     return (
         <div className="cartFooter">
             <p>${totalCost}</p>
