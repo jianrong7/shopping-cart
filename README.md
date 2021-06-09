@@ -1,18 +1,20 @@
 # shopping-cart
 
 ## Project Overview
+[Live Demo](https://jianrong7.github.io/shopping-cart/)
 
 ### Description
 A simple shopping cart application.
 
 ### Features
-
-### Screenshots
-
+- Add items rendered from Dummy API
+- Cart is modular and you can change quantities
 
 ### Frameworks
 - Web Framework
 	- [React](https://reactjs.org/)
+- [Fake Store API](https://fakestoreapi.com/)
+
 ### Tools
 - React Router
 
