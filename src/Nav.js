@@ -10,11 +10,11 @@ export default function Nav() {
     };
     return (
         <nav>
-            <Link to="/">
+            <Link to="/shopping-cart">
                 <img src={logo} alt="" style={style} />
             </Link>
             <ul className="nav-links">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/shopping-cart" style={{ textDecoration: 'none' }}>
                     <li className="nav">Home</li>
                 </Link>
                 <Link to="/shop" style={{ textDecoration: 'none' }}>
