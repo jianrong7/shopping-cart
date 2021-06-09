@@ -43,9 +43,13 @@ function App() {
         let cartItemsTemp = cartItems;
         let index = cartItemsTemp.indexOf(itemTemp);
 
-        itemTemp['quantity'] = quantity;
-        cartItemsTemp[index] = itemTemp;
-        
+        if (quantity < 1) {
+            cartItemsTemp.splice(index, 1);
+        } else {
+            itemTemp['quantity'] = quantity;
+            cartItemsTemp[index] = itemTemp;
+        }
+
         setCartItems(cartItemsTemp);
         calculateTotalCost(cartItemsTemp)
     };
@@ -54,8 +58,9 @@ function App() {
         let sum = cart.reduce((accumulator, currentValue) => {
             return accumulator + (currentValue.price * currentValue.quantity)
         }, 0);
+        sum = Math.round(sum * 100) / 100
         setTotalCost(sum);
-    }
+    };
 
     return (
         <Router>
@@ -64,10 +69,14 @@ function App() {
                 <Switch>
                     <Route path="/" exact component={Home} />
                     <Route path="/shop" exact>
-                        <Shop shopItems={dummyItems} />
+                        <Shop />
                     </Route>
                     <Route path="/cart" exact>
-                        <Cart cartItems={cartItems} changeQuantity={changeQuantity} totalCost={totalCost} />
+                        <Cart
+                        cartItems={cartItems}
+                        changeQuantity={changeQuantity}
+                        totalCost={totalCost}
+                        />
                     </Route>
                     <Route path="/shop/:id">
                         <ItemDetail addToCart={addToCart} />

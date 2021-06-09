@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
 
-function Shop({ shopItems }) {
+function Shop() {
     useEffect(() => {
         fetchItems();
     }, []);
 
     const [items, setItems] = useState([])
 
-    const fetchItems = () => {
-        setItems(shopItems)
+    const fetchItems = async () => {
+        let fetchItems = await fetch('https://fakestoreapi.com/products');
+        let itemsData = await fetchItems.json()
+        setItems(itemsData);
     };
 
     return (

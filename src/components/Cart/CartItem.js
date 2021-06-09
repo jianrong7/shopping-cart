@@ -7,6 +7,7 @@ function CartItem({ item, changeQuantity }) {
         changeQuantity(item, quantity);
     }, [quantity])
 
+
     return (
         <div className="cartItem">
             <img src={item.image} alt="" className="shopImages" />
@@ -14,9 +15,9 @@ function CartItem({ item, changeQuantity }) {
             <div className="priceDetail">
                 <span>${item.price}</span>
                 <div className="quantity">
-                    <button onClick={() => setQuantity(prevQuantity => prevQuantity - 1)}>-</button>
-                    <span>{quantity}</span>
-                    <button onClick={() => setQuantity(prevQuantity => prevQuantity + 1)}>+</button>
+                    <button onClick={() => setQuantity(prevQuantity => prevQuantity - 1)} className="quantityBtn">-</button>
+                    <div className="quantityTracker">{quantity}</div>
+                    <button onClick={() => setQuantity(prevQuantity => prevQuantity + 1)} className="quantityBtn">+</button>
                 </div>
             </div>
         </div>

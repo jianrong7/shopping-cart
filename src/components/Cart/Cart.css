@@ -52,7 +52,8 @@
     border-top: 3px solid white;
 }
 .cartFooter p {
-    font-size: 50px;  
+    font-size: 50px;
+    width: 250px;
 }
 .completeOrderBtn {
     background-color: white;
@@ -69,5 +70,26 @@
     text-align: center;
 }
 .completeOrderBtn:hover {
+    cursor: pointer;
+}
+.quantity {
+    display: flex;
+    height: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid white;
+}
+.quantityTracker {
+    height: 20px;
+    padding: 0px 5px 0px 5px;
+    margin-top: -5px;
+}
+.quantityBtn {
+    height: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+button:hover {
     cursor: pointer;
 }
