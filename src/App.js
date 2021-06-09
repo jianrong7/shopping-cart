@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -8,19 +8,8 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-    const [dummyItems, setDummyItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
-
-    useEffect(() => {
-        fetchItems();
-    }, []);
-
-    const fetchItems = async () => {
-        let fetchItems = await fetch('https://fakestoreapi.com/products');
-        let items = await fetchItems.json()
-        setDummyItems(items);
-    };
 
     const addToCart = (item) => {
         let itemTemp = item;
