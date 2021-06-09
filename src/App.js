@@ -57,6 +57,7 @@ function App() {
                 <Nav />
                 <Switch>
                     <Route path="/" exact component={Home} />
+                    <Route path="/shopping-cart" exact component={Home} />
                     <Route path="/shop" exact>
                         <Shop />
                     </Route>

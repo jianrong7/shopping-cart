@@ -1,7 +1,7 @@
 # shopping-cart
 
 ## Project Overview
-[Live Demo](https://jianrong7.github.io/)
+[Live Demo](https://jianrong7.github.io/shopping-cart/)
 
 ### Description
 A simple shopping cart application.
